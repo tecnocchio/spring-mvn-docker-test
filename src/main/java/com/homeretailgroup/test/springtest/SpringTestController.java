@@ -18,11 +18,11 @@ public class SpringTestController {
 
 	/**
 	 * @param name 
-	 * @return NumbersDAO Implementation's getNumber value
+	 * @return NumbersDAO implementation's of getNumber(name) function
 	 */
 	@RequestMapping(value = "/numbers", method = RequestMethod.GET)
-	public String getNumberOf(String name) {
-		return Integer.toString(new NumbersDAOImpl().getNumber(name));
+	public Integer getNumberOf(String name) {
+		return new NumbersDAOImpl().getNumber(name);
 	}
 
 }
