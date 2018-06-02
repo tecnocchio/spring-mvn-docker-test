@@ -12,7 +12,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
-public class GetNumbersIntegrationTests {
+public class GetNumbersIT {
 
 	@Autowired
 	private TestRestTemplate testRestTemplate;
@@ -24,6 +24,7 @@ public class GetNumbersIntegrationTests {
 
 		// Make call to our endpoint
 		assertThat(this.testRestTemplate.getForObject("/numbers/?name={name}", String.class, name)).contains(number);
-	}
+//		assertThat(this.testRestTemplate.getForObject("/numbers/?name={name}", String.class, name)).contains("error");
+		}
 
 }
